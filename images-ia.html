@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Animes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #304674;
+            --card-bg: #1e293b;
+            --accent-color: #38bdf8;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-radius: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Card Principal (Destaque) */
+        .featured-card {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            background-color: var(--card-bg);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .featured-card img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        /* Galeria Secundária */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            position: relative;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        /* Efeitos ao passar o mouse */
+        .card:hover, .featured-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(56, 189, 248, 0.2);
+        }
+
+        .card:hover img, .featured-card:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Legendas sobre as imagens */
+        .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            background: linear-gradient(transparent, rgba(15, 23, 42, 0.95));
+            color: var(--text-color);
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container">
+        <header>
+            <h1>Galeria de Animes</h1>
+        </header>
+
+        <figure class="featured-card">
+            <img src="F1.webp" alt="Naruto">
+            <figcaption class="caption">Naruto</figcaption>
+        </figure>
+
+        <section class="gallery-grid">
+            <figure class="card">
+                <img src="F2.webp" alt="Death Note">
+                <figcaption class="caption">Death Note</figcaption>
+            </figure>
+
+            <figure class="card">
+                <img src="F3.webp" alt="Attack on Titan">
+                <figcaption class="caption">Attack on Titan</figcaption>
+            </figure>
+
+            <figure class="card">
+                <img src="F4.jpg" alt="Hunter x Hunter">
+                <figcaption class="caption">Hunter x Hunter</figcaption>
+            </figure>
+        </section>
+    </main>
+
+</body>
+</html>
